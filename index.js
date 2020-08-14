@@ -63,7 +63,10 @@ app.use(function (req, res, next) {
 });
 
 // Send message for default URL
-app.get('/', (req, res) => res.send('Hello World with Express'));
+//app.get('/', (req, res) => res.send('Hello World with Express'));
+app.get('/', function(req, res){
+  res.sendFile('index.html');
+});
 
 // Use Api routes in the App
 app.use('/api', apiRoutes);
