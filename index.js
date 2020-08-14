@@ -6,6 +6,8 @@ let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 // Initialise the app
 let app = express();
+//path
+const path = require('path');
 
 // Import routes
 let apiRoutes = require("./api-routes");
@@ -65,7 +67,7 @@ app.use(function (req, res, next) {
 // Send message for default URL
 //app.get('/', (req, res) => res.send('Hello World with Express'));
 app.get('/', function(req, res){
-  res.sendFile('index.html');
+  res.sendFile(path.join(__dirname+'/index.html'));
 });
 
 // Use Api routes in the App
