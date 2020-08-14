@@ -1,0 +1,4 @@
+TODO
+- Add o qualis 2017-2019
+- Build the homepage like pokeapi
+- 
