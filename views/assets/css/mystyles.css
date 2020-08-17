@@ -1,0 +1,13 @@
+/*my styles*/
+div#json{
+  display: block; 
+  height: 500px;
+  max-height: 500px;
+}
+.hints{
+  color: #007bff;
+}
+.hints:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}

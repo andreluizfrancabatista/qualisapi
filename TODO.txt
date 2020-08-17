@@ -1,4 +1,11 @@
 TODO
-- Add o qualis 2017-2019
-- Build the homepage like pokeapi
-- 
+- fazer e configurar página de erro 404
+
+LEMBRETES
+- para fazer o login no heroku
+heroku login
+
+- para atualizar o app
+git add .
+git commit -m "comentário"
+git push heroku master

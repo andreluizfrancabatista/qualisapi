@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129511160-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-129511160-2');
+  </script>
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/png" href="./assets/img/ico_qualis_icon.png">
+  <title>QualisAPI</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="./assets/css/nucleo-icons.css" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+  <!-- Argon CSS -->
+  <link type="text/css" href="./assets/css/argon-design-system.min.css" rel="stylesheet">
+
+  <!--JSON viewer CSS-->
+  <link type="text/css" href="./assets/js/json-viewer-master/src/json-viewer.css" rel="stylesheet">
+  <link type="text/css" href="./assets/css/mystyles.css" rel="stylesheet">
+  <link type="text/css" href="./assets/css/loader.css" rel="stylesheet">
+</head>
+
+<body>
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-default">
+    <div class="container">
+      <a class="navbar-brand" href="./index.html">Qualis API</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default"
+        aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar-default">
+        <div class="navbar-collapse-header">
+          <div class="row">
+            <div class="col-6 collapse-brand">
+              <a href="javascript:void(0)">
+                <img src="./assets/img/brand/blue.png">
+              </a>
+            </div>
+            <div class="col-6 collapse-close">
+              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-default"
+                aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <ul class="navbar-nav ml-lg-auto">
+          <li class="nav-item">
+            <a class="nav-link nav-link-icon" href="./index.html">
+              HOME
+              <span class="nav-link-inner--text d-lg-none">Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-icon" href="./about.html">
+              ABOUT
+              <span class="nav-link-inner--text d-lg-none">About</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-icon" href="#">
+              DOCUMENTATION
+              <span class="nav-link-inner--text d-lg-none">Profile</span>
+            </a>
+          </li>
+          <!--Menu dropdown
+          <li class="nav-item dropdown">
+            <a class="nav-link nav-link-icon" href="#" id="navbar-default_dropdown_1" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              DOCUMENTATION
+              <span class="nav-link-inner--text d-lg-none">Settings</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          -->
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+  <!--end of navbar-->
+  <!--Jumbotron-->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container text-center">
+      <h1>QualisAPI</h1>
+      <p>Consulta de classificação de periódicos, segundo estratos da Capes, disponível por meio de uma RESTful API.</p>
+    </div>
+  </div>
+  <!--Seção 1-->
+  <div class="section pt-0">
+    <div class="container">
+      <h2 class="text-center">Faça um teste!</h2>
+      <div class="container px-5 bg-white">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary">https://qualisapi.herokuapp.com/api/qualis/issn/</span>
+          </div>
+          <input type="text" class="form-control" style="padding-left: 15px;" value="0101-9031" id="issn">
+          <div class="input-group-append">
+            <button type="button" class="btn btn-success" id="btnSubmit"><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+        <div class="section p-0" id="alertMsgBox"></div>
+      </div>
+      <div class="container px-5 mt-2">
+        <p>Quer uma dica? Tente:
+          <span class="hints">1809-4309</span>,
+          <span class="hints">1982-873X</span>,
+          <span class="hints">1984-6444</span>.</p>
+        <p>Link para os resultados: <a href="#" id="directresults" target="_blank"></a></p>
+      </div>
+      <div class="container px-5 mt-2">
+        <div id="json" class="bg-secondary">
+          <div id="loader" class="lds-roller">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <div class="container px-5 mt-3">
+        <div class="row">
+          <div class="col-md-6">
+            <h4 class="text-center">O que é QualisAPI?</h4>
+            <p class="text-justify bg-secondary p-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
+              obcaecati cumque quasi similique dolorum
+              deleniti quae rem eaque pariatur vel quisquam distinctio, temporibus rerum. Quisquam harum tempora unde
+              nihil nulla!</p>
+          </div>
+          <div class="col-md-6">
+            <h4 class="text-center">Como funciona?</h4>
+            <p class="text-justify bg-secondary p-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab,
+              eveniet excepturi. Ipsam aperiam sit ex
+              consectetur quis, beatae minus, voluptatum repudiandae vel optio dolorem aliquid eius. Deserunt laudantium
+              rerum debitis?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Footer-->
+  <div class="footer container-fluid">
+    <p class="text-center">Criado por <a href="http://andrebatista.me" target="_blank">André Luiz França Batista</a> com
+      dados extraídos da <a href="https://sucupira.capes.gov.br/" target="_blank">plataforma Sucupira</a>.</p>
+  </div>
+
+  <!-- Core -->
+  <script src="./assets/js/core/jquery.min.js"></script>
+  <script src="./assets/js/core/popper.min.js"></script>
+  <script src="./assets/js/core/bootstrap.min.js"></script>
+  <script src="./assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="./assets/js/json-viewer-master/src/json-viewer.js"></script>
+  <script src="./assets/js/core/consulta.js"></script>
+
+  <!-- Optional plugins -->
+
+
+  <!-- Argon JS -->
+  <script src="./assets/js/argon-design-system.js"></script>
+</body>
+
+</html>

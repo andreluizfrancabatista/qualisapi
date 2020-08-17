@@ -1,0 +1,9 @@
+OK - limitar a altura do container do json, para aparecer uma barra de rolagem.
+OK - cor de fundo do container do json.
+OK - criar direct link to results,
+OK - criar as dicas com link para preencher o input
+OK - remover o id e o create date da visualização
+OK - colocar um loader no json viewer
+- fazer o rodape
+- fazer o about
+- pensar sobre o documentation
