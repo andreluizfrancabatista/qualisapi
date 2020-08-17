@@ -37,7 +37,7 @@ exports.new = function (req, res) {
 // Handle view qualis info
 exports.view = function (req, res) {
   //Qualis.find({ issn: req.params.issn }, function (err, qualis) {
-  Qualis.find({ issn: req.params.issn }, { projection: { _id: 0, create_date: 0 } }).toArray(function (err, qualis) {
+  Qualis.find({ issn: req.params.issn }, '-_id -create_date').toArray(function (err, qualis) {
     if (err)
       res.send(err);
     if (qualis.length) {

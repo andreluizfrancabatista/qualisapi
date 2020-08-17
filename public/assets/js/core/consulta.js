@@ -16,6 +16,7 @@ function consultaQualis(fullURL) {
     .then((data) => {
       //console.log(data['message']);
       console.log(data);
+      console.table(data);
       if (data['data'][0]) {
         //issn encontrado
         let newData = removeIdCreateDate(data['data']);
