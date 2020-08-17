@@ -1,5 +1,3 @@
-/*consulta.js*/
-
 let jsonViewer = new JSONViewer();
 document.querySelector("#json").appendChild(jsonViewer.getContainer());
 
