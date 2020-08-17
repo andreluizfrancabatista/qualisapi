@@ -1,13 +1,15 @@
 let jsonViewer = new JSONViewer();
 document.querySelector("#json").appendChild(jsonViewer.getContainer());
 
+/**URL da API */
 let url = "https://qualisapi.herokuapp.com/api/qualis/issn/";
 
+/**Cria um alerta  */
 let alertMsg = function(msg1, msg2, color = 'bg-warning'){
   let msg = "<div class='alert alert-warning alert-dismissible fade show mt-2 " + color + "' role='alert'><span class='alert-inner--icon'><i class='ni ni-bell-55'></i></span><span class='alert-inner--text'><strong>" + msg1 + "</strong> " + msg2 + "</span>    <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>×</span>    </button></div>";
   return msg;
 }
-
+/**Realiza consulta no API, e apresenta os resultados em formato json */
 function consultaQualis(fullURL) {
   fetch(fullURL)
     .then((response) => {
@@ -38,6 +40,7 @@ function consultaQualis(fullURL) {
     });
 }
 
+/*Não tem mais utilidade porque estou usando um filter no .find() do Mongoose para excluir o _id e create-date */
 function removeIdCreateDate(data) {
   Object.keys(data).forEach(function (key) {
     delete data[key]['_id'];
@@ -46,6 +49,7 @@ function removeIdCreateDate(data) {
   return data;
 }
 
+/**Cria o link direto para os resultados */
 function criaLinkDirectResults(fullURL) {
   let anchorLink = document.getElementById('directresults');
   anchorLink.innerHTML = fullURL;
@@ -56,6 +60,7 @@ function isIssnEmpty() {
   return !document.getElementById("issn").value;
 }
 
+/**Botão submit, alerta de erro no issn inserido */
 let btnSubmit = document.getElementById("btnSubmit");
 btnSubmit.addEventListener('click', function () {
   let dataISSN = document.getElementById("issn").value;
@@ -71,6 +76,7 @@ btnSubmit.addEventListener('click', function () {
   }
 });
 
+/**Hints quer uma dica? */
 let hints = document.getElementsByClassName('hints');
 Array.prototype.forEach.call(hints, function (item) {
   item.addEventListener('click', function () {
@@ -78,6 +84,7 @@ Array.prototype.forEach.call(hints, function (item) {
   });
 });
 
+/*Ao usar a tecla ENTER no search-box, realiza a consulta*/
 document.getElementById('issn').addEventListener('keyup', function () {
   if (event.keyCode === 13) {
     event.preventDefault();
