@@ -41,7 +41,7 @@ exports.view = function (req, res) {
       res.send(err);
     if (qualis.length){
       res.json({
-        message: 'Contact details loading...',
+        //message: 'Contact details loading...',
         data: qualis
       });
     } else {
