@@ -9,3 +9,7 @@ heroku login
 git add .
 git commit -m "comentário"
 git push heroku master
+
+- para restart o app
+heroku restart -a APPNAME
+heroku restart --app APPNAME
