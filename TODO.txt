@@ -1,5 +1,6 @@
 TODO
 - fazer e configurar página de erro 404
+- API analytics MOESIF no Heroku
 
 LEMBRETES
 - para fazer o login no heroku

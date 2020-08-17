@@ -36,10 +36,10 @@ exports.new = function (req, res) {
 };
 // Handle view qualis info
 exports.view = function (req, res) {
-  Qualis.find({issn:req.params.issn}, function (err, qualis) {
+  Qualis.find({ issn: req.params.issn }, { projection: { _id: 0, create_date: 0 } }, function (err, qualis) {
     if (err)
       res.send(err);
-    if (qualis.length){
+    if (qualis.length) {
       res.json({
         //message: 'Contact details loading...',
         data: qualis
@@ -49,17 +49,17 @@ exports.view = function (req, res) {
         message: 'Sem retorno',
         data: qualis
       })
-    }  
+    }
   });
 };
 // Handle view qualis/estrato info
 exports.view2 = function (req, res) {
-  Qualis.find({issn:req.params.issn, estrato:req.params.estrato}, function (err, qualis) {
+  Qualis.find({ issn: req.params.issn, estrato: req.params.estrato }, function (err, qualis) {
     if (err)
       res.send(err);
-    if (qualis.length){
+    if (qualis.length) {
       res.json({
-        message: 'Contact details loading...',
+        //message: 'Contact details loading...',
         data: qualis
       });
     } else {
