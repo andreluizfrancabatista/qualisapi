@@ -15,11 +15,12 @@ function consultaQualis(fullURL) {
     })
     .then((data) => {
       //console.log(data['message']);
-      console.log(data);
-      console.table(data);
+      //console.log(data);
+      //console.table(data);
       if (data['data'][0]) {
         //issn encontrado
-        let newData = removeIdCreateDate(data['data']);
+        //let newData = removeIdCreateDate(data['data']);
+        let newData = data['data'];
         console.table(newData);
         document.getElementsByClassName('json-viewer')[0].style.display = 'block';
         jsonViewer.showJSON(newData);

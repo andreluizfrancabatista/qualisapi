@@ -36,8 +36,8 @@ exports.new = function (req, res) {
 };
 // Handle view qualis info
 exports.view = function (req, res) {
-  //Qualis.find({ issn: req.params.issn }, function (err, qualis) {
-  Qualis.find({ issn: req.params.issn }, '-_id -create_date', function (err, qualis) {
+  //Qualis.find({ issn: req.params.issn }, function (err, qualis) { //get all fields
+  Qualis.find({ issn: req.params.issn }, '-_id -create_date', function (err, qualis) { //get the filtered fields
     if (err)
       res.send(err);
     if (qualis.length) {
@@ -55,7 +55,7 @@ exports.view = function (req, res) {
 };
 // Handle view qualis/estrato info
 exports.view2 = function (req, res) {
-  Qualis.find({ issn: req.params.issn, estrato: req.params.estrato }, function (err, qualis) {
+  Qualis.find({ issn: req.params.issn, estrato: req.params.estrato }, '-_id -create_date', function (err, qualis) {
     if (err)
       res.send(err);
     if (qualis.length) {
