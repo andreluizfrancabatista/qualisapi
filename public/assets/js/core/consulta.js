@@ -81,6 +81,7 @@ let hints = document.getElementsByClassName('hints');
 Array.prototype.forEach.call(hints, function (item) {
   item.addEventListener('click', function () {
     document.getElementById("issn").value = item.innerHTML;
+    btnSubmit.click();
   });
 });
 
