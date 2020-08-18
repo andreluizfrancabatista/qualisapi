@@ -1,6 +1,8 @@
 TODO
-- fazer e configurar página de erro 404
+OK - fazer e configurar página de erro 404
 - API analytics MOESIF no Heroku
+- Estudar as query (find com $regex) do Mongoose para fazer uma endpoint que busca pelo título do periódico
+- Função no JS para montar cabeçalho e rodapé
 
 LEMBRETES
 - para fazer o login no heroku
@@ -14,3 +16,6 @@ git push heroku master
 - para restart o app
 heroku restart -a APPNAME
 heroku restart --app APPNAME
+
+- para rodar localmente
+nodemon index.js

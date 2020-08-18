@@ -105,7 +105,7 @@
   <div class="jumbotron jumbotron-fluid">
     <div class="container text-center">
       <h1>QualisAPI</h1>
-      <p>Consulta de classificação de periódicos, segundo estratos da Capes, disponível por meio de uma RESTful API.</p>
+      <p>Consulta de classificação de periódicos, segundo estratos da Capes do Quadriênio 2013-2016, disponível por meio de uma RESTful API.</p>
     </div>
   </div>
   <!--Seção 1-->
@@ -150,17 +150,28 @@
         <div class="row">
           <div class="col-md-6">
             <h4 class="text-center">O que é QualisAPI?</h4>
-            <p class="text-justify bg-secondary p-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
-              obcaecati cumque quasi similique dolorum
-              deleniti quae rem eaque pariatur vel quisquam distinctio, temporibus rerum. Quisquam harum tempora unde
-              nihil nulla!</p>
+            <div class="text-justify bg-secondary p-4">
+              <p>O QualisAPI é um recurso que permite consultar o estrato Qualis de um periódico, na classificação do quadriênio 2013-2016, por meio de uma busca pelo seu respectivo número ISSN.</p>
+              <p>Por enquanto apenas buscas por número de ISSN são permitidas, além de filtros por estratos (ex.: 0101-9031 ou 0101-9031/B1). No futuro serão implementadas as buscas por título do periódico.</p>
+              <p>Essa API utiliza dados públicos do sistema Qualis Periódicos mas não visa o substituir. Pelo contrário, é um recurso extra para aqueles que buscam uma API para estudos, pesquisas, e desenvolvimento de aplicações diversas que porventura necessitam do estrato de periódicos.</p>
+            </div>
           </div>
           <div class="col-md-6">
             <h4 class="text-center">Como funciona?</h4>
-            <p class="text-justify bg-secondary p-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab,
-              eveniet excepturi. Ipsam aperiam sit ex
-              consectetur quis, beatae minus, voluptatum repudiandae vel optio dolorem aliquid eius. Deserunt laudantium
-              rerum debitis?</p>
+            <div class="text-justify bg-secondary p-4">
+              <p>
+                Por meio de endpoints (URLs) o usuário tem acesso ao estrato Qualis de um periódico em todas as áreas de
+                avaliação na qual ele se encontra. Para ter acesso aos dados de um periódico, por meio desta API, você
+                deve:
+              </p>
+              <ol>
+                <li>Utilizar o número de ISSN do periódico desejado para criar a URL do endpoint;</li>
+                <li>Acessar o endpoint via URL criada;</li>
+                <li>Obter os resultados.</li>
+              </ol>
+              <p>Esta API facilita o uso de dados da plataforma Qualis Periódicos para desenvolvimento de outras
+                aplicações, como por exemplo a extensão para o Google Chrome <a href="" target="">ChromeQualis</a>.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -171,7 +182,10 @@
   <!--Footer-->
   <div class="footer container-fluid">
     <p class="text-center">Criado por <a href="http://andrebatista.me" target="_blank">André Luiz França Batista</a> com
-      dados extraídos do sistema <a href="https://sucupira.capes.gov.br/sucupira/public/consultas/coleta/veiculoPublicacaoQualis/listaConsultaGeralPeriodicos.jsf" target="_blank">Qualis Periódicos</a> da <a href="https://sucupira.capes.gov.br/" target="_blank">plataforma Sucupira</a>.</p>
+      dados extraídos do sistema <a
+        href="https://sucupira.capes.gov.br/sucupira/public/consultas/coleta/veiculoPublicacaoQualis/listaConsultaGeralPeriodicos.jsf"
+        target="_blank">Qualis Periódicos</a> da <a href="https://sucupira.capes.gov.br/" target="_blank">plataforma
+        Sucupira</a>.</p>
   </div>
 
   <!-- Core -->
