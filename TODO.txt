@@ -3,6 +3,7 @@ OK - fazer e configurar página de erro 404
 - API analytics MOESIF no Heroku
 - Estudar as query (find com $regex) do Mongoose para fazer uma endpoint que busca pelo título do periódico
 - Função no JS para montar cabeçalho e rodapé
+- Keywords for SEO
 
 LEMBRETES
 - para fazer o login no heroku
@@ -19,3 +20,6 @@ heroku restart --app APPNAME
 
 - para rodar localmente
 nodemon index.js
+
+- heroku logs
+heroku logs -t
