@@ -3,7 +3,24 @@ OK - fazer e configurar página de erro 404
 - API analytics MOESIF no Heroku
 - Estudar as query (find com $regex) do Mongoose para fazer uma endpoint que busca pelo título do periódico
 - Função no JS para montar cabeçalho e rodapé
-- Keywords for SEO
+OK - Keywords for SEO
+
+- Estou mudando a URL da endpoint
+- Antes: router.route('/qualis/issn/:issn') --> será descontinuada em breve (não remover do sistema até ter certeza que a extensão atualiza automaticamente nos browsers. ou não remove de jeito nenhum, mantém como legacy)
+- Agora: router.route('/qualis/v2/issn/:issn')
+- Agora: router.route('/qualis/v1/issn/:issn')
+
+- Fazer o changelog no lugar do documentation
+- Função no JS para montar cabeçalho e rodapé (home, about, documentation)
+OK - Fazer uma função para checar o regex da consulta no campo search e retornar um alert caso não esteja dentro do formato:
+-- ^(v[1-2]\/issn\/[0-9]{4}-[0-9]{3}[0-9|x]{1})$
+
+function isValidURL(issn) {
+  //^v[1-2]\/issn\/[0-9]{4}-[0-9]{3}[0-9|x]{1} //REGEX ISSN com url da api
+  let str = issn;
+  let patt = new RegExp('^v[1-2]\/issn\/[0-9]{4}-[0-9]{3}[0-9|x]{1}', 'gmi');
+  return patt.test(str);
+}
 
 LEMBRETES
 - para fazer o login no heroku

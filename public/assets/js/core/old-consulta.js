@@ -1,12 +1,12 @@
+/** Esse consulta.js estava funcionando antes das alterações para coletar qualis 2019 */
 let jsonViewer = new JSONViewer();
 document.querySelector("#json").appendChild(jsonViewer.getContainer());
 
 /**URL da API */
-let url = "https://qualisapi.herokuapp.com/api/qualis/"; //url para commit no heroku
-//let url = "http://localhost:8080/api/qualis/"; //url para teste local nodemon
+let url = "https://qualisapi.herokuapp.com/api/qualis/issn/";
 
 /**Cria um alerta  */
-let alertMsg = function (msg1, msg2, color = 'bg-warning') {
+let alertMsg = function(msg1, msg2, color = 'bg-warning'){
   let msg = "<div class='alert alert-warning alert-dismissible fade show mt-2 " + color + "' role='alert'><span class='alert-inner--icon'><i class='ni ni-bell-55'></i></span><span class='alert-inner--text'><strong>" + msg1 + "</strong> " + msg2 + "</span>    <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>×</span>    </button></div>";
   return msg;
 }
@@ -42,7 +42,6 @@ function consultaQualis(fullURL) {
 }
 
 /*Não tem mais utilidade porque estou usando um filter no .find() do Mongoose para excluir o _id e create-date */
-/*
 function removeIdCreateDate(data) {
   Object.keys(data).forEach(function (key) {
     delete data[key]['_id'];
@@ -50,7 +49,6 @@ function removeIdCreateDate(data) {
   });
   return data;
 }
-*/
 
 /**Cria o link direto para os resultados */
 function criaLinkDirectResults(fullURL) {
@@ -62,13 +60,6 @@ function criaLinkDirectResults(fullURL) {
 function isIssnEmpty() {
   return !document.getElementById("issn").value;
 }
-// Validação da URL de consulta
-function isValidURL(issn) {
-  //v[1-2]\/issn\/[0-9]{4}-[0-9]{3}[0-9|x]{1} //REGEX ISSN com url da api
-  let str = issn;
-  let patt = new RegExp('^v[1-2]\/issn\/[0-9]{4}-[0-9]{3}[0-9|X]{1}', 'gmi');
-  return patt.test(str);
-}
 
 /**Botão submit, alerta de erro no issn inserido */
 let btnSubmit = document.getElementById("btnSubmit");
@@ -78,10 +69,7 @@ btnSubmit.addEventListener('click', function () {
 
   if (isIssnEmpty()) {
     document.getElementById('alertMsgBox').innerHTML = alertMsg("Atenção!", "Insira um número de ISSN no campo acima.");
-  } else if (!isValidURL(dataISSN)) {
-    document.getElementById('alertMsgBox').innerHTML = alertMsg("Atenção!", "Formato de busca inválido. <br>Use uma pesquisa válida:<br>v1/issn/0000-0000 --> para dados do quadriênio 2013-2016<br>v2/issn/0000-0000 --> para dados do período 2017-2018");
   } else {
-    document.getElementById('alertMsgBox').innerHTML = "";
     document.getElementById('loader').style.display = 'inline-block';
     document.getElementsByClassName('json-viewer')[0].style.display = 'none';
     consultaQualis(fullURL);

@@ -1,6 +1,6 @@
 // qualisModel.js
 var mongoose = require('mongoose');
-// Setup schema
+// Setup schema v1
 var qualisSchema = mongoose.Schema({
   issn: {
     type: String,
@@ -23,7 +23,8 @@ var qualisSchema = mongoose.Schema({
     default: Date.now
   }
 });
-// Export Qualis model
+
+// Export Qualis model v1
 var Qualis = module.exports = mongoose.model('qualis', qualisSchema);
 module.exports.get = function (callback, limit) {
   Qualis.find(callback).limit(limit);

@@ -1,6 +1,8 @@
 // qualisController.js
 // Import qualis model
 Qualis = require('./qualisModel');
+QualisV2 = require('./qualisModelV2');
+
 // Handle index actions
 exports.index = function (req, res) {
   Qualis.get(function (err, contacts) {
@@ -47,7 +49,7 @@ exports.view = function (req, res) {
       });
     } else {
       res.json({
-        message: 'Sem retorno',
+        message: 'Sem retorno.',
         data: qualis
       })
     }
@@ -65,7 +67,25 @@ exports.view2 = function (req, res) {
       });
     } else {
       res.json({
-        message: 'Sem retorno',
+        message: 'Sem retorno.',
+        data: qualis
+      })
+    }
+  });
+};
+// Qualis 2019 - Handle view qualis/estrato info
+exports.view3 = function (req, res) {
+  QualisV2.find({ issn: req.params.issn }, '-_id', function (err, qualis) { //get the filtered fields
+    if (err)
+      res.send(err);
+    if (qualis.length) {
+      res.json({
+        //message: 'Contact details loading...',
+        data: qualis
+      });
+    } else {
+      res.json({
+        message: 'Sem retorno.',
         data: qualis
       })
     }

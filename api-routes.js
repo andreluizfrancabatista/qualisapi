@@ -19,14 +19,28 @@ router.route('/qualis')
   .post(qualisController.new);
 */
 //Recupera um registro pelo ISSN
-  router.route('/qualis/issn/:issn')
+//Essa endpoint será descontinuada quando a extensão do Chrome atualizar
+router.route('/qualis/issn/:issn')
   .get(qualisController.view);
-  //.patch(qualisController.update)
-  //.put(qualisController.update)
-  //.delete(qualisController.delete);
+//.patch(qualisController.update)
+//.put(qualisController.update)
+//.delete(qualisController.delete);
 
 //Recupera um registro pelo issn/estrato
+//Essa endpoint será descontinuada quando a extensão do Chrome atualizar
 router.route('/qualis/issn/:issn/:estrato')
   .get(qualisController.view2);
-// Export API routes
+
+//Recupera um registro pelo issn - Qualis 2019
+router.route('/qualis/v2/issn/:issn')
+  .get(qualisController.view3);
+
+//Recupera um registro pelo issn - Qualis 2013-2016
+router.route('/qualis/v1/issn/:issn')
+  .get(qualisController.view);
+//Recupera um registro pelo issn/estrato
+router.route('/qualis/v1/issn/:issn/:estrato')
+  .get(qualisController.view2);
+
+  // Export API routes
 module.exports = router;
