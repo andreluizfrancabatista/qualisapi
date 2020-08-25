@@ -30,7 +30,9 @@ function consultaQualis(fullURL) {
         document.getElementById('loader').style.display = 'none';
       } else {
         //issn não encontrado
-        console.table(data['data']);
+        console.table(data);
+        document.getElementsByClassName('json-viewer')[0].style.display = 'block';
+        jsonViewer.showJSON(data);
         document.getElementById('loader').style.display = 'none';
         document.getElementById('alertMsgBox').innerHTML = alertMsg("Aviso!", "Número de ISSN não encontrado.", "bg-info");
       }
