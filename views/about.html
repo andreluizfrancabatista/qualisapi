@@ -18,7 +18,8 @@
   <link rel="icon" type="image/png" href="./assets/img/ico_qualis_icon.png">
   <!--SEO-->
   <title>About Qualis API</title>
-  <meta name="description" content="Qualis API. Consulte o Qualis de um periódico (com ISSN) por meio de uma restful API. Consulta de classificação de periódicos, segundo estratos da Capes, disponível por meio de uma RESTful API. Por meio de endpoints (URLs) o usuário tem acesso ao estrato Qualis de um periódico em todas as áreas de avaliação na qual ele se encontra. Os dados retornados estão em formato JSON. Para ter acesso aos dados de um periódico, por meio desta API, você deve: Utilizar o número de ISSN do periódico desejado para criar a URL do endpoint; Acessar o endpoint via URL criada; Obter os resultados. Conheça a ChromeQualis, uma extensão para o Google Chrome para consulta do Qualis de periódicos. Extensão ChromeQualis.">
+  <meta name="description"
+    content="Qualis API. Consulte o Qualis de um periódico (com ISSN) por meio de uma restful API. Consulta de classificação de periódicos, segundo estratos da Capes, disponível por meio de uma RESTful API. Por meio de endpoints (URLs) o usuário tem acesso ao estrato Qualis de um periódico em todas as áreas de avaliação na qual ele se encontra. Os dados retornados estão em formato JSON. Para ter acesso aos dados de um periódico, por meio desta API, você deve: Utilizar o número de ISSN do periódico desejado para criar a URL do endpoint; Acessar o endpoint via URL criada; Obter os resultados. Conheça a ChromeQualis, uma extensão para o Google Chrome para consulta do Qualis de periódicos. Extensão ChromeQualis.">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet">
@@ -111,15 +112,20 @@
     </div>
   </div>
   <!--Seção 1-->
-  
+
   <div class="container px-5 mt-3 mb-3">
     <div class="row">
       <div class="col-md-6">
         <h4 class="text-center">O que é QualisAPI?</h4>
         <div class="text-justify bg-secondary p-4">
-          <p>O QualisAPI é um recurso que permite consultar o estrato Qualis de um periódico, nas classificações do quadriênio 2013-2016 e a mais recente 2017-2018, por meio de uma busca pelo seu respectivo número ISSN. Obs.: os dados referentes a classificação de 2019, não são oficiais mas sim uma prévia.</p>
-          <p>Por enquanto apenas buscas por número de ISSN são permitidas, além de filtros por estratos (ex.: 0101-9031 ou 0101-9031/B1). No futuro serão implementadas as buscas por título do periódico.</p>
-          <p>Essa API utiliza dados públicos do sistema Qualis Periódicos mas não visa o substituir. Pelo contrário, é um recurso extra para aqueles que buscam uma API para estudos, pesquisas, e desenvolvimento de aplicações diversas que porventura necessitam do estrato de periódicos.</p>
+          <p>O QualisAPI é um recurso que permite consultar o estrato Qualis de um periódico, nas classificações do
+            quadriênio 2013-2016 e a mais recente 2017-2018, por meio de uma busca pelo seu respectivo número ISSN.
+            Obs.: os dados referentes a classificação de 2019, não são oficiais mas sim uma prévia.</p>
+          <p>Por enquanto apenas buscas por número de ISSN são permitidas, além de filtros por estratos (ex.: 0101-9031
+            ou 0101-9031/B1). No futuro serão implementadas as buscas por título do periódico.</p>
+          <p>Essa API utiliza dados públicos do sistema Qualis Periódicos mas não visa o substituir. Pelo contrário, é
+            um recurso extra para aqueles que buscam uma API para estudos, pesquisas, e desenvolvimento de aplicações
+            diversas que porventura necessitam do estrato de periódicos.</p>
         </div>
       </div>
       <div class="col-md-6">
@@ -127,7 +133,8 @@
         <div class="text-justify bg-secondary p-4">
           <p>
             Por meio de endpoints (URLs) o usuário tem acesso ao estrato Qualis de um periódico em todas as áreas de
-            avaliação na qual ele se encontra. Os dados retornados estão em formato JSON. Para ter acesso aos dados de um periódico, por meio desta API, você
+            avaliação na qual ele se encontra. Os dados retornados estão em formato JSON. Para ter acesso aos dados de
+            um periódico, por meio desta API, você
             deve:
           </p>
           <ol>
@@ -136,16 +143,60 @@
             <li>Obter os resultados.</li>
           </ol>
           <p>Esta API facilita o uso de dados da plataforma Qualis Periódicos para desenvolvimento de outras
-            aplicações, como por exemplo a extensão para o Google Chrome <a href="https://chrome.google.com/webstore/detail/chromequalis/gpcehgmogffgjgdjdlcmkglfmgdmhfcj" target="_blank">ChromeQualis</a>.</p>
+            aplicações, como por exemplo a extensão para o Google Chrome <a
+              href="https://chrome.google.com/webstore/detail/chromequalis/gpcehgmogffgjgdjdlcmkglfmgdmhfcj"
+              target="_blank">ChromeQualis</a>.</p>
         </div>
       </div>
     </div>
   </div>
 
+  <div class="container px-5 mt-3 mb-3">
+    <div class="row">
+      <div class="col-md-6">
+        <h4 class="text-center">Como citar</h4>
+        <div class="text-justify bg-secondary p-4">
+          <p>Em artigos científicos e trabalhos acadêmicos, essa API pode ser citada como:</p>
+          <p class="text-muted">Batista, André Luiz França. (2020). Consulta de classificação de periódicos, segundo
+            estratos da Capes, disponível por meio de uma RESTful API. API. Disponível em http://qualisapi.herokuapp.com
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h4 class="text-center">Origem dos dados</h4>
+        <div class="text-justify bg-secondary p-4">
+
+          <p>Os dados utilizados para construção dessa API foram extraídos da Plataforma Sucupira da CAPES conforme as
+            seguintes citações:</p>
+          <ul></ul>
+          <li class="text-left text-muted">Gouveia, Fabio C. (2017): Arquivos Qualis 2013-2016 de todas as áreas para
+            ScriptLattes.
+            figshare. Dataset. https://doi.org/10.6084/m9.figshare.5177185.v2 <a
+              href="https://doi.org/10.6084/m9.figshare.5177185.v2" target="_blank"><i
+                class="fas fa-external-link-alt"></i></a>
+          </li>
+          <li class="text-left text-muted">Gouveia, Fabio C. (2020): Arquivo CSV para scriptLattes com a proposta de Novo Qualis
+            único para todas as
+            áreas. figshare. Dataset. https://doi.org/10.6084/m9.figshare.11952552.v1 <a
+              href="https://doi.org/10.6084/m9.figshare.11952552.v1" target="_blank"><i
+                class="fas fa-external-link-alt"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
   <!--Footer-->
   <div class="footer container-fluid">
-    <p class="text-center">Criado por <a href="http://andrebatista.me" target="_blank">André Luiz França Batista</a> com
-      dados extraídos do sistema <a href="https://sucupira.capes.gov.br/sucupira/public/consultas/coleta/veiculoPublicacaoQualis/listaConsultaGeralPeriodicos.jsf" target="_blank">Qualis Periódicos</a> da <a href="https://sucupira.capes.gov.br/" target="_blank">plataforma Sucupira</a>.</p>
+    <p class="text-center">Criado por <a href="http://andrebatista.me" target="_blank">André Luiz França Batista</a>
+      com
+      dados extraídos do sistema <a
+        href="https://sucupira.capes.gov.br/sucupira/public/consultas/coleta/veiculoPublicacaoQualis/listaConsultaGeralPeriodicos.jsf"
+        target="_blank">Qualis Periódicos</a> da <a href="https://sucupira.capes.gov.br/" target="_blank">plataforma
+        Sucupira</a>.</p>
   </div>
 
   <!-- Core -->
@@ -154,7 +205,7 @@
   <script src="./assets/js/core/bootstrap.min.js"></script>
   <script src="./assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
   <script src="./assets/js/json-viewer-master/src/json-viewer.js"></script>
-  
+
 
   <!-- Optional plugins -->
 
