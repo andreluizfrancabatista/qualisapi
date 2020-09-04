@@ -59,7 +59,6 @@ app.use(function (req, res, next) {
 //app.get('/', (req, res) => res.send('Hello World with Express'));
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname + '/views/index.html'));
-  
 });
 
 app.get('/about', function (req, res) {
