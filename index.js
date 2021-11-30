@@ -72,12 +72,12 @@ app.use('/api', apiRoutes);
 app.use(express.static(path.join(__dirname, 'public')));
 
 //404 error page
-app.use(function(req, res, next){
+app.use(function (req, res, next) {
   res.status(404).sendFile(path.join(__dirname + '/views/404.html'));
 });
 
 //500 error page
-app.use(function(req, res, next){
+app.use(function (req, res, next) {
   res.status(500).sendFile(path.join(__dirname + '/views/500.html'));
 });
 
