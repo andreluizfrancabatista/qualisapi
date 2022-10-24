@@ -17,7 +17,9 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-let dbURI = 'mongodb+srv://andrebatista:iAcQdxZ3eJjWt6HU@cluster0.81pdb.gcp.mongodb.net/qualisdb?retryWrites=true&w=majority';
+var admin = process.env.ADMIN
+var password = process.env.PASSWORD
+let dbURI = `mongodb+srv://${admin}:${password}@cluster0.81pdb.gcp.mongodb.net/qualisdb?retryWrites=true&w=majority`;
 try {
   mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
   var db = mongoose.connection;
